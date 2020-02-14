@@ -2,10 +2,10 @@ const siteConfig = {
   title: 'Sykes Holiday Cottages',
   disableHeaderTitle: true,
   tagline: 'Technology Blog',
-  url: 'https://SykesCottages.github.io',
+  url: 'https://sykescottages.github.io',
   baseUrl: '/technology-blog/',
   projectName: 'technology-blog',
-  organizationName: 'SykesCottages',
+  organizationName: 'sykescottages',
   headerLinks: [{
     blog: true,
     label: 'Technology Blog'
