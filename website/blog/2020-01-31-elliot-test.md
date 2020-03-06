@@ -7,7 +7,7 @@ authorFBID: 100000979534649
 
 This blog post is a test for elliot rodgers.
 
-Hello
+Hello test circle ci
 
 <!--truncate-->
 
