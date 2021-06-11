@@ -3,7 +3,7 @@ const siteConfig = {
   disableHeaderTitle: true,
   tagline: 'Technology Blog',
   url: 'https://sykes.dev',
-  baseUrl: '/',
+  baseUrl: '/blog',
   projectName: 'technology-blog',
   organizationName: 'sykescottages',
   headerLinks: [{
