@@ -1,13 +1,26 @@
-name: CI
-on: [push]
+name: documentation
+
+on:
+  push:
+    branches: [master]
 
 jobs:
-  deploy:
+  gh-release:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: redkubes/docusaurus-deploy-action@master
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          source-folder: website
-          git-user: exussum12
-          git-password: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '12.x'
+      - uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+      - name: Release to GitHub Pages
+        env:
+          USE_SSH: true
+          GIT_USER: git
+        run: |
+          git config --global user.email "scott.dutton@sykescottages.co.uk"
+          git config --global user.name "Scott Dutton"
+          cd website && yarn install && yarn run publish-gh-pages 
