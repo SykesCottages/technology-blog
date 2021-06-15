@@ -14,7 +14,7 @@ const siteConfig = {
   footerIcon: 'img/sykes-primary-logo-white-small.svg',
   favicon: 'img/favicon.ico',
   colors: {
-    primaryColor: '#215aa8',
+    primaryColor: '#22313f',
     secondaryColor: '#143f6f',
   },
   fonts: {
