@@ -2,7 +2,6 @@
 slug: Why Sykes Cottages partnered with Snowflake and Confluent
 title: Why Sykes Cottages partnered with Snowflake and Confluent to drive enhanced customer experience.
 author: Bob Pearman
-unlisted: true
 authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
 ---
 
