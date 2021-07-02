@@ -80,7 +80,7 @@ expect at least 10x ROI over 3 years for this investment.
 
 When running our vendor selection process Snowflake for the Data Warehouse was the clear winner. With its powerful scalability features, data ingestion options, familiar SQL language, and DWaaS model, it really stood head and sholders above the other vendors we looked at. Really enabling us as a business to go much faster by massively simplifying this critical pipeline. Coupled with Confluent Kafka we are able to stream data to the warehouse, at scale, in semi-structured formats, and apply any instream processing we need through a simple user interface. A real step change in capability for us.
 
-Over to Simon Prydden now for the technical bit..
+Over to [Simon Prydden](https://www.linkedin.com/in/simonprydden/) now for the technical bit..
 
 ## How (for the techies)
 
