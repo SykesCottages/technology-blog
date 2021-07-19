@@ -34,7 +34,7 @@ const siteConfig = {
   cleanUrl: true,
   twitterImage: 'img/sykes-twitter-logo.jpg',
   twitter: true,
-  twitterUsername: 'sykescottages',
+  twitterUsername: 'SykesDev',
   facebookAppId: 236941918291,
   facebookComments: true,
 };
