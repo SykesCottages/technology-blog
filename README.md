@@ -1,52 +1,53 @@
-This website was created with [Docusaurus](https://docusaurus.io/).
 
 # What's In This Document
-
-- [Get Started in 5 Minutes](#get-started-in-5-minutes)
-- [Directory Structure](#directory-structure)
+- [Setting Up Docker](#setting-up-docker)
+- [Setting Up Local Dev](#setting-up-local-dev)
 - [Editing Content](#editing-content)
 - [Adding Content](#adding-content)
 - [Full Documentation](#full-documentation)
 
-# Get Started in 5 Minutes
+# Setting Up Docker
+```sh
+# Start docker in detached mode
+docker-compose up -d
 
-1. Make sure all the dependencies for the website are installed:
+# Start docker in attached mode
+docker-compose up
+```
 
+# Setting Up Local Dev
+1. Make sure all the dependencies for the website are installed locally
+- yarn
+- nodejs
+```sh
+# Ubuntu 20.4 users should be able to run.
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn nodejs
+```
+
+2. Install dependencies via yarn
 ```sh
 # Install dependencies
-$ yarn
+cd to the website/ folder and run 
+yarn
 ```
 
 2. Run your dev server:
-
 ```sh
 # Start the site
-$ yarn start
-```
+yarn start
 
-## Directory Structure
-
-Your project file structure should look something like this
-
-```
-my-docusaurus/
-  website/
-    blog/
-      2016-3-11-oldest-post.md
-      2017-10-24-newest-post.md
-    core/
-    node_modules/
-    pages/
-    static/
-      css/
-      img/
-    package.json
-    sidebars.json
-    siteConfig.js
+You should see the following result, along with the browser window popping open to https://localhost:3000/blog/
+# yarn run v1.22.15
+# warning package.json: No license field
+# $ docusaurus-start
+# LiveReload server started on port 35729
+# Docusaurus server started on port 3000
 ```
 
 # Editing an existing blog post
-
 Edit blog posts by navigating to `website/blog` and editing the corresponding post:
 
 `website/blog/post-to-be-edited.md`
@@ -63,7 +64,6 @@ Edit me...
 For more information about blog posts, click [here](https://docusaurus.io/docs/en/adding-blog)
 
 # Adding a new blog post
-
 1. Make sure there is a header link to your blog in `website/siteConfig.js`:
 
 `website/siteConfig.js`
@@ -118,7 +118,6 @@ For more information about blog posts, click [here](https://docusaurus.io/docs/e
 For more information about the navigation bar, click [here](https://docusaurus.io/docs/en/navigation)
 
 ## Adding custom pages
-
 1. Docusaurus uses React components to build pages. The components are saved as .js files in `website/pages/en`:
 1. If you want your page to show up in your navigation header, you will need to update `website/siteConfig.js` to add to the `headerLinks` element:
 
@@ -138,5 +137,4 @@ For more information about the navigation bar, click [here](https://docusaurus.i
 For more information about custom pages, click [here](https://docusaurus.io/docs/en/custom-pages).
 
 # Full Documentation
-
 Full documentation can be found on the [website](https://docusaurus.io/).
