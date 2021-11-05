@@ -91,8 +91,8 @@ Example below using an atlassian image
           variables:
             AWS_DEFAULT_REGION: 'eu-west-1'
             AWS_OIDC_ROLE_ARN: 'arn:aws:iam::accountid:role/RoleName'
-            S3_BUCKET: 'api.sykes.network'
-            LOCAL_PATH: 'upstream/hoppscotch/dist/'
+            S3_BUCKET: 'xxxxxxx'
+            LOCAL_PATH: 'local/path'
             ACL: 'bucket-owner-full-control'
 ```
 
