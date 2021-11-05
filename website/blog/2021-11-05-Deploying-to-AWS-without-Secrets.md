@@ -10,7 +10,7 @@ This article attempts to give an insight to how we deploy code at Sykes, using B
 
 ## About Sykes
 
-The techniques shared in this article were produced by the development team at Sykes. We are always pushing for more automated and more secure builds in out CI process. If you are a talented Data Scientist, Analyst or Developer please check out our [current vacancies](https://www.sykescottages.co.uk/careers/).
+The techniques shared in this article were produced by the development team at Sykes. We are always pushing for more automated and more secure builds in our CI process. If you are a talented Data Scientist, Analyst or Developer please check out our [current vacancies](https://www.sykescottages.co.uk/careers/).
 
 <!--truncate-->
 
@@ -20,13 +20,14 @@ Storing code on Bitbucket and deploying to AWS is quite a common set up, most tu
 demonstrate ways to deploy using secrets in the Build, this works well, especially using
 a user which can assume other roles.
 
-Due to the variety of applications this user tends to be quite powerful, so the build process becomes an attractive target.
+Due to the variety of applications this user tends to be quite powerful, so the build process becomes an attractive target for credential
+leaking, this can sometimes happen with Github actions running on Pull Requests with the AWS keys in the environment.
 
 We wanted to reduce the risk of this key leaking and if it did we need to be able to limit damage this key could cause.
 
 ## Using OpenID connect
 
-Ideally we do not want any secrets in the build, removing secrets simplifies lots of things as the
+Ideally, we do not want any secrets in the build, removing secrets simplifies lots of things as the
 requirement to rotate the credentials goes away also.
 
 We settled on a solution using OpenID Connect. To set this up go to a repo in BitBucket, Click Settings, and then Open ID connect
@@ -50,7 +51,7 @@ resource "aws_iam_openid_connect_provider" "bitbucket" {
   url = "https://api.bitbucket.org/2.0/workspaces/workspaceURL/pipelines-config/identity/oidc"
 
   client_id_list = [
-    "The Audiance String from BitBucket",
+    "The Audience String from BitBucket (See screenshot above)",
   ]
 
   thumbprint_list = [
