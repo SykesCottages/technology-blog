@@ -3,7 +3,6 @@ slug: Deploying to AWS without Secrets 2021-07-16
 title: Deploying to AWS without Secrets
 author: Scott Dutton
 authorURL: https://www.twitter.com/exusssum
-unlisted: true
 ---
 
 This article attempts to give an insight to how we deploy code at Sykes, using Bitbucket and AWS
