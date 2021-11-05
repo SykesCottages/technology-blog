@@ -3,6 +3,7 @@ slug: Deploying to AWS without Secrets 2021-07-16
 title: Deploying to AWS without Secrets
 author: Scott Dutton
 authorURL: https://www.twitter.com/exusssum
+unlisted: true
 ---
 
 This article attempts to give an insight to how we deploy code at Sykes, using Bitbucket and AWS
@@ -70,6 +71,7 @@ Press next and choose permissions like a normal role. Try to keep this role to a
 
 Now its created we can lock it down a little more, Back on the original openid connect page in bitbucket, there is a repository id, if we use this ID in the 
 policy statement we can stop one project using a role of another project.
+The role should have the minimum permissions it needs to deploy a single code base.
 
 ## The Builds
 
@@ -93,4 +95,29 @@ Example below using an atlassian image
             ACL: 'bucket-owner-full-control'
 ```
 
+If you are using a base image you need to set up the CLI manually as follows (again making sure that oidc: true is set)
+```
+export AWS_WEB_IDENTITY_TOKEN_FILE=~/.aws/web-identity-token
+echo "${BITBUCKET_STEP_OIDC_TOKEN}" >> ${AWS_WEB_IDENTITY_TOKEN_FILE}
+chmod 400 ${AWS_WEB_IDENTITY_TOKEN_FILE}
+aws configure set web_identity_token_file ${AWS_WEB_IDENTITY_TOKEN_FILE}
+aws configure set role_arn ${AWS_ROLE_ARN}
+```
+With the role coming from the deployment variables / repository variables (used for checking a pull request for example)
+
+
 ## Summary
+
+Using OpenID Connect simplifies deploying to AWS in a secure way, which has built in rotation and allows really find grained
+controls over the deployment.
+
+Debugging can be a little harder as its hard to know if the token has been passed correctly, using the aws cli it's easy to
+check
+
+```
+aws sts get-caller-identity
+```
+
+should show if the token has been picked up and in use
+
+Github also supports OpenID connect and the process is very similar there
