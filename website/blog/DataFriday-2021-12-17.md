@@ -3,7 +3,6 @@ slug: Friday Data 2021-12-17
 title: #FridayData 2021-12-17
 author: Bob Pearman
 authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
-unlisted: true
 ---
 
 
