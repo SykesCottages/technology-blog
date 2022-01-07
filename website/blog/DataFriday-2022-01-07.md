@@ -1,6 +1,6 @@
 ---
 slug: Friday Data 2022-01-07
-title: #FridayData 2021-01-07
+title: #FridayData 2022-01-07
 author: Bob Pearman
 authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
 ---
