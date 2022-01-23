@@ -24,7 +24,8 @@ jobs:
           
       - name: Copy files to s3 and clear cache
         run: |
-          cd website && yarn install && yarn run publish-gh-pages
-          aws s3 sync . s3://my-s3-test-website-bucket
+          cd website && yarn install && yarn run build
+          cd build/technology-blog
+          aws s3 sync . s3://sykes.technology
 
 
