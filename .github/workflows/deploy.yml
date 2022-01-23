@@ -1,26 +1,30 @@
 name: documentation
+permissions:
+      id-token: write
+      contents: read
 
 on:
   push:
     branches: [master]
 
 jobs:
-  gh-release:
+  release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - uses: webfactory/ssh-agent@v0.5.0
+      - name: Set up creds
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
-      - name: Release to GitHub Pages
-        env:
-          USE_SSH: true
-          GIT_USER: git
+          role-to-assume: arn:aws:iam::423697686116:role/DeployTechBlog
+          aws-region: eu-west-1
+          
+      - name: Copy files to s3 and clear cache
         run: |
-          git config --global user.email "scott.dutton@sykescottages.co.uk"
-          git config --global user.name "Scott Dutton"
-          cd website && yarn install && yarn run publish-gh-pages 
+          cd website && yarn install && yarn run publish-gh-pages
+          aws s3 sync . s3://my-s3-test-website-bucket
+
+
