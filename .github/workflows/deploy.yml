@@ -27,5 +27,8 @@ jobs:
           cd website && yarn install && yarn run build
           cd build/technology-blog
           aws s3 sync . s3://sykes.technology
+          aws cloudfront create-invalidation \
+            --distribution-id E1WOSL0TMLZN7 \
+            --paths "/*"
 
 
