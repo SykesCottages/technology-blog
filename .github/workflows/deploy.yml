@@ -19,7 +19,7 @@ jobs:
       - name: Set up creds
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::423697686116:role/DeployTechBlog
+          role-to-assume: $ROLE
           aws-region: eu-west-1
           
       - name: Copy files to s3 and clear cache
