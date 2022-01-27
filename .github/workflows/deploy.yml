@@ -19,7 +19,7 @@ jobs:
       - name: Set up creds
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: $ROLE
+          role-to-assume: ${{ secrets.ROLE }}
           aws-region: eu-west-1
           
       - name: Copy files to s3 and clear cache
