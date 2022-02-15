@@ -3,7 +3,6 @@ slug: How does mobile app usage compare to website usage at Sykes?
 title: How does mobile app usage compare to website usage at Sykes?
 author: John Rowlands
 authorURL: https://www.linkedin.com/in/johnrowlandsuk/
-unlisted: true
 ---
 
 Since Sykes have migrated to using Google Analytics 4 (GA4) we have been more easily able to compare website and app events.
@@ -14,14 +13,13 @@ While mobile app booking share may only be around 7.5% (and growing), we see som
 
  
 |                  |App events per user|Web events per user|
-|------------------|-------------------|-------------------|
 |Sessions per month|10                 |2                  |
 |Searches per month|17                 |6                  |
-|Property views per month| 33           |6                  |
-|Properties added to favourites per month|7 | 3             |
-|Average Engagement Time| 16 minutes    |       6 minutes   |
+Property views per month| 33           |6                  |
+Properties added to favourites per month|7 | 3             |
+Average Engagement Time| 16 minutes    |       6 minutes   |
 
-![Engagement Time](/img/postimages/app/engagementtime.png)
+![Engagement Time](/img/app/engagementtime.png)
 
 Aligning our analytics across platforms has enabled us to get a broader picture of our customers’ journeys.  
 We are continuing to improve and standardise our analytics to gain more insight into multi-channel behaviour to help us understand and support our customers.
@@ -39,5 +37,5 @@ iOS: https://apps.apple.com/gb/app/sykes-holiday-cottages/id1263445398
 
 ## About Sykes
 
-The techniques shared in this article were produced by the development team at Sykes. We are always pushing for more automated and more secure builds in our CI process. If you are a talented Data Scientist, Analyst or Developer please check out our [current vacancies](https://www.sykescottages.co.uk/careers/).
+The techniques shared in this article were produced by the development team at Sykes. If you are a talented Data Scientist, Analyst or Developer please check out our [current vacancies](https://www.sykescottages.co.uk/careers/).
 
