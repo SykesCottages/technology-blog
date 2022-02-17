@@ -2,7 +2,7 @@ const siteConfig = {
   title: 'Sykes Holiday Cottages',
   disableHeaderTitle: true,
   tagline: 'Technology Blog',
-  url: 'https://sykes.dev',
+  url: 'https://sykes.technology',
   baseUrl: '/',
   projectName: 'technology-blog',
   organizationName: 'sykescottages',
@@ -37,6 +37,7 @@ const siteConfig = {
   twitterUsername: 'SykesDev',
   facebookAppId: 236941918291,
   facebookComments: true,
+  blogSidebarCount: 'ALL',
 };
 
 module.exports = siteConfig;
