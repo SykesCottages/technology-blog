@@ -1,0 +1,23 @@
+---
+slug: Friday Data 2022-03-04
+title: #FridayData 2022-03-04
+author: Bob Pearman
+authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
+unlisted: true
+---
+
+# Sykes have delivered 27% more impressions so far this year versus 2020 and we continue to serve to more than just cottages.
+
+Sykes is a platform that delivers for our customers and owners alike, at scale. So far this year we have delivered over half a billion impressions (individual search results) this is 27% up on 2020 (still pre-pandemic at this point… 
+
+![DataFriday](/img/postimages/friday-data/20220304-1.png)
+
+Digging into this data a little deeper we can see that we are serving more than just cottages, impressions here are divided over number of properties, on average as a proportion Caravans have received the highest proportion of impressions per unit.
+
+![DataFriday](/img/postimages/friday-data/20220304-2.png)
+
+However, breaking down our properties by type reminds us that cottages remains our bread and butter, but we have a healthy selection available for whatever our customers fancy.
+
+![DataFriday](/img/postimages/friday-data/20220304-3.png)
+
+If you would like to join our fantastic team of colleagues, [please get in touch!](https://www.sykescottages.co.uk/careers/).
