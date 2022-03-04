@@ -3,7 +3,6 @@ slug: Friday Data 2022-03-04
 title: #FridayData 2022-03-04
 author: Bob Pearman
 authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
-unlisted: true
 ---
 
 # Sykes have delivered 27% more impressions so far this year versus 2020 and we continue to serve to more than just cottages.
