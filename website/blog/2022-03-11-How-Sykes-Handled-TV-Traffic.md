@@ -7,7 +7,7 @@ unlisted: true
 draft: true
 ---
 
-This article is explaining how we prepared the website for an unknown amount of traffic.
+This article explains how we prepared the website for an unknown amount of traffic.
 
 ## About Sykes
 
@@ -37,7 +37,7 @@ we can make a pretty good call on the servers needed.
 ## TV Traffic
 
 TV Traffic is different, it's more similar to the [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect)
-we had to prepare for an unknown, not natural traffic pattern, we assumed it would be a sawtooth with a very steep leading
+we had to prepare for an unknown, unnatural traffic pattern, we assumed it would be a sawtooth with a very steep leading
 edge and a slow gradual trailing edge.
 
 ![Sawtooth effect](/img/postimages/tv-effect/sawtooth.png)
@@ -46,8 +46,8 @@ The unknown part is how high the traffic will go. The viewer base on the show at
 So it has the potential to be quite high, even if 0.5% of people (1 in 200) look for Sykes online when the see the section,
 that is still 400k hits in a very small amount of time, where the auto scale would not be able to react fast enough.
 
-We also did not know what this traffic would do, but assumed it would not a "standard" user to the website, who is activly
-looking for a holiday. To go back to the Supermarket example, if a large bus turned up unexpected and all bought a single bottle of
+We also did not know what this traffic would do, but assumed it would not be a "standard" user to the website, who is actively
+looking for a holiday. To go back to the Supermarket example, if a large bus turned up unexpected and all passengers bought a single bottle of
 water, that customer is nothing like the normal profile of a customer, and checkouts are just one of the issues the supermarket would have.
 
 Not knowing how the traffic would behave, we pre-scaled everything which could effect their journey up, and also turned off
@@ -56,7 +56,7 @@ just catch up later on.
 
 We had also discussed second peaks for things like +1, but assumed they would be much easier to deal with.
 
-There are 3 part to this formula, the incoming traffic, the speed a request can be dealt with, and the number of requests
+There are 3 parts to this formula, the incoming traffic, the speed a request can be dealt with, and the number of requests
 which we can deal with concurrently, speeding up the application is not realistic, we have no control over the incoming traffic
 so the last option is scale the number of requests we can deal with per second.
 
@@ -64,8 +64,8 @@ In the previous example, this is opening more checkouts in anticipation.
 
 ## The Scaling
 
-We assumed that the initial scale would be a little bit bigger than our normal peaks, our max container counter in fargate for the previous month was 13 for
-the website, so we set the minimum count to be 14, this was much higher than the expected Saturday traffic, but about inline with our busy periods
+We assumed that the initial scale would be a little bit bigger than our normal peaks, our max container counter in Fargate for the previous month was 13 for
+the website, so we set the minimum count to be 14, this was much higher than the expected Saturday traffic, but about inline with our busy periods.
 
 ![Normal Saturday Scaling](/img/postimages/tv-effect/normalsaturday.png)
 
@@ -91,11 +91,11 @@ When the mention did happen we saw traffic jump immediately
 
 Traffic within 40 seconds was twice the previous traffic!
 
-That is a very large jump! We don't know where the peak will be, we still have some headroom, but with that sort of growth
+That is a very large jump! We didn't know where the peak would be, we still had some headroom, but with that sort of growth,
 it will run out quickly 
 ![Extrapolation](https://imgs.xkcd.com/comics/extrapolating.png)
 
-We start to look at starting the scaling off some more thinking we had underestimated the traffic coming in,
+We started looking at scaling up even further, thinking we had underestimated the traffic coming in,
 as we were doing that the peak seemed to have arrived, at a little over 3x the normal traffic level and was returning back
 to normal traffic levels quicker than we had thought too.
 
@@ -118,7 +118,7 @@ Sykes were able to do this easily due to the effort we put into making our appli
 we would have been left with 3 options:
 
 - Implement a third party "queue" system, these systems only allow a certain amount of people on the website at a single time, and others wait in a queue until they are allowed on
-- Use a caching layer such as Cloudfront or Varnish and stop many requests hitting us, as we rely on our appications for A/B testing, we would have lost the ability to run these which was not a good option
+- Use a caching layer such as Cloudfront or Varnish and stop many requests hitting us, as we rely on our applications for A/B testing, we would have lost the ability to run these which was not a good option
 - Hope that our service doesn't fall over, which is what a large amount of the early slashdot effect people did.
 
 
