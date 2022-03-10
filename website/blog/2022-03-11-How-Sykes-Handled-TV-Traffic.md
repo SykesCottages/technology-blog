@@ -94,6 +94,7 @@ Traffic within 40 seconds was twice the previous traffic!
 That is a very large jump! We didn't know where the peak would be, we still had some headroom, but with that sort of growth,
 it will run out quickly 
 ![Extrapolation](https://imgs.xkcd.com/comics/extrapolating.png)
+(credit [XKCD](https://xkcd.com/605/))
 
 We started looking at scaling up even further, thinking we had underestimated the traffic coming in,
 as we were doing that the peak seemed to have arrived, at a little over 3x the normal traffic level and was returning back
