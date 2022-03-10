@@ -18,7 +18,7 @@ The techniques shared in this article were produced by the development team at S
 ## Context
 
 Handling a variable amount of traffic is a day to day operation at Sykes, we have auto scaling
-in place for most of our services, this allows us to handle web traffic in a cost effective way,
+enabled on the Sykes platform, this allows us to handle web traffic in a cost effective way,
 which also scales up automatically, with the limiting factor being cost of services.
 
 TV traffic is not normal traffic though, especially on a prime time slot on a Saturday night. 
