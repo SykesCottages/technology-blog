@@ -1,8 +1,8 @@
 ---
 slug: Friday Data 2022-02-04
-title: #FridayData 2022-02-04
+title: "#FridayData 2022-02-04"
 author: Bob Pearman
-authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
+authorURL: "https://www.linkedin.com/in/bob-pearman-32696562/"
 ---
 
 # Sykes are using Kafka and Snowflake to stream almost 5 million events per day during January from the website

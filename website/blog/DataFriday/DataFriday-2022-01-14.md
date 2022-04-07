@@ -1,8 +1,8 @@
 ---
 slug: Friday Data 2022-01-14
-title: #FridayData 2022-01-14
+title: "#FridayData 2022-01-14"
 author: Bob Pearman
-authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
+authorURL: "https://www.linkedin.com/in/bob-pearman-32696562/"
 ---
 
 # Demand in the past week still showing large bias early (Winter) months (short lead) versus 2020

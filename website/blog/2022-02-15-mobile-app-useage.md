@@ -1,8 +1,7 @@
 ---
-slug: How does mobile app usage compare to website usage at Sykes?
 title: How does mobile app usage compare to website usage at Sykes?
 author: John Rowlands
-authorURL: https://www.linkedin.com/in/johnrowlandsuk/
+authorURL: "https://www.linkedin.com/in/johnrowlandsuk/"
 ---
 
 Since Sykes have migrated to using Google Analytics 4 (GA4) we have been more easily able to compare website and app events.
@@ -11,15 +10,15 @@ During this period, the website had over 16 million views, while the apps had ju
 
 While mobile app booking share may only be around 7.5% (and growing), we see some significant differences in the number of key events per user:
 
- 
-|                  |App events per user|Web events per user|
-|------------------|-------------------|-------------------|
-|Sessions per month|10                 |2                  |
-|Searches per month|17                 |6                  |
-Property views per month| 33           |6                  |
-Properties added to favourites per month|7 | 3             |
-Average Engagement Time| 16 minutes    |       6 minutes   |
 
+|                                          | App Events per User | Web Events per User |
+| ---                                      | ---                 |  ---                |
+| Sessions per month                       | 10                  | 2                   |
+| Searches per month                       | 17                  | 6                   |
+| Property views per month                 | 33                  | 6                   |
+| Properties added to favourites per month | 7                   | 9                   |
+| Average Engagement Time                  | 16 Minutes          | 6 minutes           |
+ 
 ![Engagement Time](/img/postimages/app/engagementtime.png)
 
 Aligning our analytics across platforms has enabled us to get a broader picture of our customers’ journeys.  

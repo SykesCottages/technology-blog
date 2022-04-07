@@ -1,8 +1,6 @@
 ---
-slug: How Sykes handled TV Traffic 2022-03-11
 title: How Sykes handled tv traffic
-author: Scott Dutton
-authorURL: https://www.twitter.com/exusssum
+authors: Scott
 ---
 
 This article explains how we prepared the website for an unknown amount of traffic.

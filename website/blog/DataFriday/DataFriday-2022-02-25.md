@@ -1,8 +1,8 @@
 ---
-slug: Friday Data 2022-02-25
-title: #FridayData 2022-02-25
+slug: FridayData/2022-02-25
+title: "#FridayData 2022-02-25"
 author: Bob Pearman
-authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
+authorURL: "https://www.linkedin.com/in/bob-pearman-32696562/"
 ---
 
 # Reflecting on five years of our people
