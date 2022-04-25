@@ -79,7 +79,7 @@ docker run -v `pwd`/nginx.conf:/etc/nginx/conf.d/default.conf:ro -p 12345:80 ngi
 
 This brings up a docker container on the host port 12345, which will keep a connection alive, removing the DNS lookup, TCP connection and TLS connection per request.
 
-Anything `.localhost` resolves to 127.0.0.1 so it's a great no config way of getting this to work. We can then override the endpoint which the AWS CLI uses to use this localhost connection instead by passing `--endpoint s3.localhost` to the AWS CLI.
+Anything `.localhost` resolves to 127.0.0.1 so it's a great no config way of getting this to work. We can then override the endpoint which the AWS CLI uses to use this localhost connection instead by passing `--endpoint http://s3.localhost:12345` to the AWS CLI.
 
 Running the same 1,000 objects though now returns in 7 minutes 1.6 seconds a 45% reduction in time taken!
 This increases the objects per second to 2.37.
@@ -96,7 +96,7 @@ You can choose any number for this, I have 16 CPUs available on my machine (on l
 ```
 aws s3api list-objects --bucket your-bucket-name --query 'Contents[].{Key:Key}' --output text |\
 grep "some-term" |\
-xargs -n 1 -P 10 aws --endpoint http://s3.localhost s3api put-object-tagging  --bucket your-bucket-name --tagging 'TagSet=[{Key=colour,Value=blue}]' --key
+xargs -n 1 -P 10 aws --endpoint http://s3.localhost:12345 s3api put-object-tagging  --bucket your-bucket-name --tagging 'TagSet=[{Key=colour,Value=blue}]' --key
 ```
 
 
