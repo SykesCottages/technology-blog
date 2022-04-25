@@ -79,7 +79,7 @@ docker run -v `pwd`/nginx.conf:/etc/nginx/conf.d/default.conf:ro -p 12345:80 ngi
 
 This brings up a docker container on the host port 12345, which will keep a connection alive, this removed the DNS lookup, TCP connection and TLS connection per request.
 
-Anything `.localhost` resolves to 127.0.0.1 so it's a great no config way of geting this to work. We can then override the endpoint which the AWS CLI uses to use this localhost connection instead by passing `--endpoint s3.localhost` to the AWS CLI.
+Anything `.localhost` resolves to 127.0.0.1 so it's a great no config way of getting this to work. We can then override the endpoint which the AWS CLI uses to use this localhost connection instead by passing `--endpoint s3.localhost` to the AWS CLI.
 
 Running the same 1,000 objects though now returns in 7 minutes 1.6 seconds a 45% reduction in time taken!
 This increases the objects per second to 2.37.
@@ -91,7 +91,7 @@ xargs by default runs one process at a time, so by default running 1 simultaneou
 
 xargs has a very nice flag which allows this, `-P {number}` will allow you to run the number passed of processes in parallel, this takes advantage of almost every machine having more than 1 thread available.
 
-You can choose any number for this, I have 16 CPU's available on my machince (on linux running `nproc` will confirm) I chose 10 as a test number, this leaves the final command as
+You can choose any number for this, I have 16 CPU's available on my machine (on linux running `nproc` will confirm) I chose 10 as a test number, this leaves the final command as
 
 
 ```
@@ -105,7 +105,7 @@ and that now runs in 45 seconds for the same test 1,000 objects, bringing the to
 
 ## Conclusion
 
-Connections, especially TLS connections take time to make, for any large amount of requests (either via automated means or natrual if a HTTPS connection is made as part of an API call) could be reused and improved in a simular way. It's transparent to the end service (in this case s3), but it does require an extra service in place which could go wrong.
+Connections, especially TLS connections take time to make, for any large amount of requests (either via automated means or natural if a HTTPS connection is made as part of an API call) could be reused and improved in a similar way. It's transparent to the end service (in this case s3), but it does require an extra service in place which could go wrong.
 
 We went from 1.3 objects per second to 22.2 objects per second (a 1707% increase) and wall time from 12 minutes and 30 seconds to 45 seconds which is a reduction of 94% from a minor tweak to the connections.
 
