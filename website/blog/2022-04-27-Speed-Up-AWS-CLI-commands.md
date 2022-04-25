@@ -93,7 +93,6 @@ xargs has a very nice flag which allows this, `-P {number}` will allow you to ru
 
 You can choose any number for this, I have 16 CPUs available on my machine (on linux running `nproc` will confirm) - I chose 10 as a test number, this leaves the final command as
 
-
 ```
 aws s3api list-objects --bucket your-bucket-name --query 'Contents[].{Key:Key}' --output text |\
 grep "some-term" |\
