@@ -24,7 +24,7 @@ https://stackoverflow.com/questions/45676862/aws-s3-cli-tag-all-objects-within-a
 aws s3api list-objects --bucket your-bucket-name --query 'Contents[].{Key:Key}' --output text | xargs -n 1 aws s3api put-object-tagging  --bucket your-bucket-name --tagging 'TagSet=[{Key=colour,Value=blue}]' --key
 ```
 
-Breaking this down a little, we are getting all of the objects and the passing over to another s3 commannd to do the tag. We would want to filter the objects so we can add a grep in between.
+Breaking this down a little, we are getting all of the objects and the passing over to another s3 command to do the tag. We would want to filter the objects so we can add a grep in between.
 
 ```
 aws s3api list-objects --bucket your-bucket-name --query 'Contents[].{Key:Key}' --output text |\
