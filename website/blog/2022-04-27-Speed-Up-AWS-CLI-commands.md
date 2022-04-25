@@ -5,7 +5,7 @@ author: Scott Dutton
 authorURL: https://www.twitter.com/exusssum
 ---
 
-At Sykes we store data in (S3)[https://aws.amazon.com/s3/], we currently have a large amount of data which needs to be managed according to various lifecycles.
+At Sykes we store data in [S3](htps://aws.amazon.com/s3/) we currently have a large amount of data which needs to be managed according to various lifecycles.
 
 I was recently looking at some of the reasons we store data in S3 and investigating how we could store the data in a more cost-effective way. For example, some data needs to be accessed frequently and other data could be stored in deep glacier as its important we keep the data, but it does not need to be online.
 
