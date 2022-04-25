@@ -5,12 +5,11 @@ author: Scott Dutton
 authorURL: https://www.twitter.com/exusssum
 ---
 
-At Sykes we store our backups in S3, we currently have daily backups stored with a lifecycle according to our policies.
+At Sykes we store data in (S3)[https://aws.amazon.com/s3/], we currently have a large amount of data which needs to be managed according to various lifecycles.
 
-I was recently looking at some of these backups and investigating how we could store them in a more cost-effective way. For example, it's unlikely for us to need a daily backup from 6 months ago - a monthly backup will be suitable for that long ago. Daily backups make more sense in a shorter timeframe, eg last week.
+I was recently looking at some of the reasons we store data in S3 and investigating how we could store the data in a more cost-effective way. For example, some data needs to be accessed frequently and other data could be stored in deep glacier as its important we keep the data, but it does not need to be online.
 
-We decided to reduce the retention period of daily backups to 90 days while keeping the monthly backup for longer, reducing the total amount of storage needed. To get to this place, we need to tag all of the objects in the bucket with the type of backup. We had lots of objects already stored which needed tagging correctly.
-
+We have object's in the same bucket which would require different storage methods, we can lifecycle them based on their tag, which is fine for new objects which we can write with the correct tag, but we have lots of old objects which would need the correct tag.
 
 
 ## The tagging
