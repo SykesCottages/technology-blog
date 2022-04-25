@@ -9,7 +9,7 @@ At Sykes we store our backups in S3, we currently have daily backups stored with
 
 I was recently looking at some of these backups and looking at how we could store this in a more cost effective way. For example it's unlikely for us to need a daily backup from 6 months ago, a monthly backup will be more suitable for that long ago. Daily backups make more sense in a shorter timeframe, eg last week.
 
-We decided to reduce the amount of daily backups to 90 days, keeping the monthly backup for a longer time period, which will reduce the total amount of storage needed. To get to this place, we need to tag all od the objects in the bucket with the type of backup. We had lots of objects already stored which needed tagging correctly.
+We decided to reduce the amount of daily backups to 90 days, keeping the monthly backup for a longer time period, which will reduce the total amount of storage needed. To get to this place, we need to tag all of the objects in the bucket with the type of backup. We had lot's of objects already stored which needed tagging correctly.
 
 
 
@@ -20,16 +20,17 @@ Tagging in objects in bulk is a solved problem, questions such as this on stacko
 https://stackoverflow.com/questions/45676862/aws-s3-cli-tag-all-objects-within-a-directory
 
 
-
+```
 aws s3api list-objects --bucket your-bucket-name --query 'Contents[].{Key:Key}' --output text | xargs -n 1 aws s3api put-object-tagging  --bucket your-bucket-name --tagging 'TagSet=[{Key=colour,Value=blue}]' --key
-
+```
 
 Breaking this down a little, we are getting all of the objects and the passing over to another s3 commannd to do the tag. We would want to filter the objects so we can add a grep in between.
 
+```
 aws s3api list-objects --bucket your-bucket-name --query 'Contents[].{Key:Key}' --output text |\
 grep "some-term" |\
 xargs -n 1 aws s3api put-object-tagging  --bucket your-bucket-name --tagging 'TagSet=[{Key=colour,Value=blue}]' --key
-
+```
 
 This works well on a small scale. I could see from the output that that was working, but it would have taken days to tag all of the objects.
 
@@ -39,9 +40,10 @@ On a small scale (1,000 objects) a tagging takes 12.5 minutes. That comes out at
 
 The script works in effect the same as below
 
+```
 aws s3api put-object-tagging object1
 aws a3api put-object-tagging object2
-
+```
 
 The AWS CLI is a wrapper around a HTTPS API, so seeing the commands like that makes it clear that you can't reuse a HTTPS connection. This means each request is a DNS query,TCP negotiation, TLS negotiation and then finally the HTTP request and HTTP response.
 
