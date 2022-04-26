@@ -14,9 +14,8 @@ We have object's in the same bucket which would require different storage method
 
 ## The tagging
 
-Tagging objects in bulk is a solved problem, questions such as this on stackoverflow show you how tagging in bulk would work.
+Tagging objects in bulk is a solved problem, questions such as (this on stackoverflow)[https://stackoverflow.com/questions/45676862/aws-s3-cli-tag-all-objects-within-a-directory] show you how tagging in bulk would work.
 
-https://stackoverflow.com/questions/45676862/aws-s3-cli-tag-all-objects-within-a-directory
 
 
 ```
