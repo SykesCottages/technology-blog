@@ -1,6 +1,5 @@
 ---
 title: Speed up AWS CLI commands
-unlisted: true
 author: Scott Dutton
 authorURL: https://www.twitter.com/exusssum
 ---
