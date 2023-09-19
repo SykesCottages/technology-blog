@@ -98,7 +98,7 @@ echo session_id(); // No valid session returned
 
 ## Fixing the issue
 
-Now that we have a repeatable case, we can dig into the difference in the cases. Redis has an excellent [Monitor mode](https://redis.io/commands/monitor/) so it's a great place to start looking for the differences. 
+Now that we have a [repeatable case](https://github.com/exussum12/redis-issue), we can dig into the difference in the cases. Redis has an excellent [Monitor mode](https://redis.io/commands/monitor/) so it's a great place to start looking for the differences.
 
 Dumping out the commands sent for [5.3.7](https://github.com/exussum12/redis-issue/blob/master/5.3.7) and [6.0.0](https://github.com/exussum12/redis-issue/blob/master/6.0.0) shows that there is a missing `GET` request after the `SET`'s on the locks. That is very consistent with what we are seeing in the from the front end as no session data is obtained. Now, to look into the code to see whats going on.
 
