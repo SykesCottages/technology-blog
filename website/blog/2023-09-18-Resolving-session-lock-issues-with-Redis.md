@@ -106,7 +106,7 @@ Dumping out the commands sent for [5.3.7](https://github.com/exussum12/redis-iss
 
 The session code seems quite simple and looking at the diff just for this file, it looks like debugging was added, but also, a [return was added](https://github.com/phpredis/phpredis/commit/687a0b405051adada1ff460a3863d0f85cd6e98a#diff-d7896829bc47f45d33720c352a4b8aabd4dca447b6db9e2d4205be5b44ba5d9eR714) in cases where a session lock couldn't be obtained. This return changes the behaviour and returns a failure; this stops the rest of the code from getting the session data. Previously, when a lock couldn't be achieved, the read-only session was returned. This is a better default position to be in than no data.
 
-Checking out the code and making the change locally confirms that this resolves the issue. This issue did highlight that this small number of session have always been problematic; if something changes on those page views in the session, it won't be saved due to the session being read only; in our use case, this is much less problematic than the session appearing to not exist.
+Checking out the code and making [the change](https://github.com/phpredis/phpredis/pull/2386) locally confirms that this resolves the issue. This issue did highlight that this small number of session have always been problematic; if something changes on those page views in the session, it won't be saved due to the session being read only; in our use case, this is much less problematic than the session appearing to not exist.
 
 ## Conclusion
 
