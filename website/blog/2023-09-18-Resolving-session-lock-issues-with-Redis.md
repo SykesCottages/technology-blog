@@ -37,7 +37,7 @@ This gets even more complicated in the below example:
 
 Now page load 2 starts after page load 1, and also finishes before page load 1 finishes; this makes it really hard to know which version to use.
 
-Session locking resolves this by allowing only one-page load to access the session at once, transforming the above to
+Session locking resolves this by allowing only one page-load to access the session at once, transforming the above to
 
 ```
 
