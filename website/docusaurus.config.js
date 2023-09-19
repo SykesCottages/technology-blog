@@ -39,6 +39,9 @@ module.exports={
   ],
   "plugins": [],
   "themeConfig": {
+		"colorMode": {
+			"defaultMode": 'dark'
+		}
     "navbar": {
       "title": "Sykes Holiday Cottages",
       "logo": {

@@ -1,7 +1,6 @@
 ---
 title: Speed up AWS CLI commands
-author: Scott Dutton
-authorURL: https://www.twitter.com/exusssum
+authors: Scott
 ---
 
 At Sykes we store data in [S3](htps://aws.amazon.com/s3/) we currently have a large amount of data which needs to be managed according to various lifecycles.

@@ -1,7 +1,6 @@
 ---
 title: Resolving session lock issues with Redis
-author: Scott Dutton
-authorURL: https://www.twitter.com/exusssum
+authors: Scott
 draft: true
 ---
 
