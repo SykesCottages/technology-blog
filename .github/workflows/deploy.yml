@@ -25,7 +25,7 @@ jobs:
       - name: Copy files to s3 and clear cache
         run: |
           cd website && yarn install && yarn run build
-          cd build/technology-blog
+          cd build
           aws s3 sync . s3://sykes.technology
           aws cloudfront create-invalidation \
             --distribution-id E1WOSL0TMLZN7 \
