@@ -47,7 +47,8 @@ module.exports={
     "navbar": {
       "title": "Sykes Holiday Cottages",
       "logo": {
-        "src": "img/sykes-primary-logo-white.svg"
+        "src": "img/sykes-primary-logo.svg",
+				"srcDark": "img/sykes-primary-logo-white.svg"
       },
       "items": []
     },
