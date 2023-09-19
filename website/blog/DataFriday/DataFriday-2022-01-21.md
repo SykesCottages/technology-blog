@@ -1,8 +1,8 @@
 ---
 slug: Friday Data 2022-01-21
-title: #FridayData 2022-01-21
+title: "#FridayData 2022-01-21"
 author: Bob Pearman
-authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
+authorURL: "https://www.linkedin.com/in/bob-pearman-32696562/"
 ---
 
 # Owners are earning over 24% more per booking on average versus 2020 for January departures

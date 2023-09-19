@@ -1,8 +1,8 @@
 ---
 slug: Friday Data 2022-01-28
-title: #FridayData 2022-01-28
+title: "#FridayData 2022-01-28"
 author: Bob Pearman
-authorURL: https://www.linkedin.com/in/bob-pearman-32696562/
+authorURL: "https://www.linkedin.com/in/bob-pearman-32696562/"
 ---
 
 # Sykes demonstrating excellent levels of NPS throughout our busiest period of the year
