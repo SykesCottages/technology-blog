@@ -40,7 +40,9 @@ module.exports={
   "plugins": [],
   "themeConfig": {
 		"colorMode": {
-			"defaultMode": 'dark'
+			defaultMode: 'dark',
+			disableSwitch: false,
+      respectPrefersColorScheme: false
 		},
     "navbar": {
       "title": "Sykes Holiday Cottages",
