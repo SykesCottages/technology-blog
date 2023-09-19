@@ -1,7 +1,6 @@
 ---
 title: Resolving session lock issues with Redis
 authors: Scott
-draft: true
 ---
 
 At Sykes we use multiple servers to handle web traffic, as a result of that we need a way to ensure that browser session data can exist between requests, there are multiple ways to do this, we decided that redis was the most suitable for us.
