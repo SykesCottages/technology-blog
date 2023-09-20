@@ -64,7 +64,7 @@ module.exports={
           ]
         }
       ],
-      "copyright": "Copyright © 2022 Sykes Holiday Cottages",
+      "copyright": "Copyright © 2023 Sykes Holiday Cottages",
       "logo": {
         "src": "img/sykes-primary-logo-white-small.svg"
       }
