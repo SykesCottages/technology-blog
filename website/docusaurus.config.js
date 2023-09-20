@@ -39,16 +39,16 @@ module.exports={
   ],
   "plugins": [],
   "themeConfig": {
-		"colorMode": {
-			defaultMode: 'dark',
-			disableSwitch: false,
-      respectPrefersColorScheme: false
-		},
+    "colorMode": {
+	    defaultMode: 'dark',
+	    disableSwitch: false,
+        respectPrefersColorScheme: false
+	},
     "navbar": {
       "title": "Sykes Holiday Cottages",
       "logo": {
         "src": "img/sykes-primary-logo.svg",
-				"srcDark": "img/sykes-primary-logo-white.svg"
+        "srcDark": "img/sykes-primary-logo-white.svg"
       },
       "items": []
     },
