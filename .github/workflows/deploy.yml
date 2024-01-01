@@ -14,10 +14,10 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: '18'
       - name: Set up creds
         uses: aws-actions/configure-aws-credentials@v1
         with:
