@@ -1,6 +1,7 @@
 ---
 title: Not that kind of PR
 authors: Matt M
+draft: true
 ---
 
 At Sykes we have a large number of software developers distributed across multiple teams and timezones. We also adopt continuous delivery meaning that at any moment in time there's likely some code being released or tested.
