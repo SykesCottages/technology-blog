@@ -173,7 +173,7 @@ If you're working on a frontend feature that will talk to a database or API that
 A key approach here is to try to decouple your work from the other developer's work. If you can, try to make your code work with a stub or mock of the API. Perhaps you commit a static JSON file or array that contains data of the correct shape.
 You can then completely develop your UI (except for stuff like pagination or interactivity) and get feedback on it without waiting.
 
-There's no reason that stubbed data can't go into production assuming your feature is behind a feature toggle or other experiment control that means real users can't see it.
+There's no reason that stubbed data can't go into production assuming your change is behind a feature toggle or other experiment control that means real users can't see it.
 
 Once the other developer's work is merged, you can then remove the stub and replace it with the real API call. That can be a separate PR which has a reduced scope (you don't need feedback from UX on your design implementation - for example).
 
@@ -195,9 +195,11 @@ At Sykes, we try to apply the campsite rule - leave everything you touch a littl
 Unfortunately, this can lead to your PR becoming larger and larger as you clean up a bit of code, refactor something else, or fix a bug you didn't even know existed.
 When this happens, it's usually better to split changes that can stand alone into their own PR. It'll be focused and easier to test and can go into production quite quickly.
 
-I like to combine this approach with the above when I'm working on a complex feature. I'll end up with a few incremental PRs which follow each other, and then a some incidental bugfixes or refactors that can go in separately.
+I like to combine this approach with the above when I'm working on a complex feature. I'll end up with a few incremental PRs which follow each other, and then some incidental bugfixes or refactors that can go in separately.
 
 Though it might seem like more PRs would be slower, in my experience they tend to be merged faster and with less risk. The downside can be conflict resolution and having too many different things in flight. If you're changing an area of the codebase other developers are actively working on, it fits less well.
+
+![Non-blocking PRs](/img/postimages/pull-requests/async.png)
 
 # Closing thoughts
 
