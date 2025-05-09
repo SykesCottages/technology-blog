@@ -166,6 +166,18 @@ We're judging the code and your approach. We have all the time in the world* to 
 _\*maybe not all the time in the world, but we'll try our best_
 
 # Asynchronous collaboration
+
+### But I need $otherDeveloper to merge their PR!
+If you're working on a frontend feature that will talk to a database or API that is under development, it can be tempting to say "I can't progress this, I need that work merged."
+
+A key approach here is to try to decouple your work from the other developer's work. If you can, try to make your code work with a stub or mock of the API. Perhaps you commit a static JSON file or array that contains data of the correct shape.
+You can then completely develop your UI (except for stuff like pagination or interactivity) and get feedback on it without waiting.
+
+There's no reason that stubbed data can't go into production assuming your feature is behind a feature toggle or other experiment control that means real users can't see it.
+
+Once the other developer's work is merged, you can then remove the stub and replace it with the real API call. That can be a separate PR which has a reduced scope (you don't need feedback from UX on your design implementation - for example).
+
+### Stacking them up
 A challenge I sometimes hear is that someone is blocked because of a PR taking a while or getting knocked back. 
 While this is valid and can need escalating or sorting out I think it's important developers have the tools to continue working regardless of external dependencies.
 
@@ -176,6 +188,16 @@ Once the old one is merged you can retarget your newer PR to the main branch.
 
 This is especially useful if you have a foundational PR that has no entry points (and so cannot break production) but adds a layer of code that you can build on top of.
 Sometimes if you have a few PRs you can ask the same reviewer to go through them, and they can maintain the context of the overall feature combined with nicely sized slices of functionality.
+
+### Rabbit holes
+At Sykes, we try to apply the campsite rule - leave everything you touch a little bit better than you found it. If everyone does this you can tackle technical debt and make your codebase a nicer place to work.
+
+Unfortunately, this can lead to your PR becoming larger and larger as you clean up a bit of code, refactor something else, or fix a bug you didn't even know existed.
+When this happens, it's usually better to split changes that can stand alone into their own PR. It'll be focused and easier to test and can go into production quite quickly.
+
+I like to combine this approach with the above when I'm working on a complex feature. I'll end up with a few incremental PRs which follow each other, and then a some incidental bugfixes or refactors that can go in separately.
+
+Though it might seem like more PRs would be slower, in my experience they tend to be merged faster and with less risk. The downside can be conflict resolution and having too many different things in flight. If you're changing an area of the codebase other developers are actively working on, it fits less well.
 
 # Closing thoughts
 
