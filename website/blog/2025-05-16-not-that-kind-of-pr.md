@@ -1,7 +1,6 @@
 ---
 title: Not that kind of PR
 authors: Matt M
-draft: true
 ---
 
 At Sykes we have a large number of software developers distributed across multiple teams and timezones. We also adopt continuous delivery meaning that at any moment in time there's likely some code being released or tested.
@@ -52,6 +51,9 @@ However - I strongly feel that everyone should participate in review. I often sp
 I always tell them not to worry. You're undervaluing yourself if you think a fresh pair of eyes adds nothing. You could spot something that the developer missed, or you could ask a question that no-one else thought to ask.
 
 **Worst case, you learn something new. Best case, you spot a bug or a security issue.**
+
+> "I prefer reviews from junior developers - if my code isn't clear to them, it's not clear code."
+> -- <cite>Scott (Solutions Architect)</cite>
 
 If as a junior developer your approval allows something to go to production that shouldn't - it's not your fault. Approve the PR if you're happy with it, but a correctly set up system would require multiple approvals anyway.
 
