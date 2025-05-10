@@ -209,5 +209,5 @@ Don't take feedback (too) personally - and be kind to each other - if in doubt h
 
 ## About Sykes
 
-The thoughts shared in this article were produced by the development team at Sykes. If you want to work on software challenges at scale, check our [current vacancies](https://www.sykescottages.co.uk/careers/).
+The thoughts shared in this article were produced by the development team at Sykes. If you want to work on software challenges at scale, check our [current vacancies](https://careers.forgeholidays.com/vacancies?custom=406-_407-4001).
 
